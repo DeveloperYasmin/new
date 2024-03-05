@@ -5,7 +5,6 @@ import { usePathname } from "next/navigation";
 
 const NavLink = ({ item }) => {
   const pathName = usePathname();
-
   return (
     <div>
       <h1>Hi iam navlink</h1>
