@@ -9,11 +9,13 @@ const Navbar = ({session})=> {
   const [open,setopen]=useState(false)
     const Menuref=useRef()
     const Imgref=useRef()
+    if(typeof window !== 'undefined')
+{
     window.addEventListener("click",(e)=>{
         if(e.target !== Menuref.current && e.target !== Imgref.current){
             setopen(false) 
         }
-    })
+    })}
     //TEMPORARY
     const isAdmin=true
  
