@@ -7,14 +7,9 @@ const NavLink = ({ item }) => {
   const pathName = usePathname();
 
   return (
-    <Link
-      href={item.path}
-      className={`$ {""} ${
-        pathName === item.path 
-      }`}
-    >
-      {item.title}
-    </Link>
+    <div>
+      <h1>Hi iam navlink</h1>
+    </div>
   );
 };
 
