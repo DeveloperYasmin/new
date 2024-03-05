@@ -9,8 +9,16 @@ import Link from "next/link";
 const Links = ({session}) => {
   return(
     <div>
-      <NavLink/>
-  <Link href="/about">Home</Link>
+      <ul>
+        <li>
+        <Link href="/">Home</Link>
+          </li>
+          <li>
+        <Link href="/about">About</Link>
+          </li> <li>
+        <Link href="/contact">Contact</Link>
+          </li>
+      </ul>
   </div>)
 };
 
