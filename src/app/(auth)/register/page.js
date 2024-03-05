@@ -1,9 +1,9 @@
-import RegisterForm from "./components/registerForm/registerForm";
+import RegisterForm from "@/app/components/registerForm/registerForm";
 
 const RegisterPage = () => {
   return (
-    <div className={styles.container}>
-      <div className={styles.wrapper}>
+    <div className= {""}>
+      <div >
         <RegisterForm/>
       </div>
     </div>

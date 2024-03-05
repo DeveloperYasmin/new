@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import NavLink from "./navLink/navLink";
+import NavLink from "../navlink/navlink";
 import Image from "next/image";
-import { handleLogout } from "@app/lib/action";
+import { handleLogout } from "@/app/lib/action";
 
 const links = [
   {
@@ -32,8 +32,8 @@ const Links = ({session}) => {
   // const isAdmin = true;
 
   return (
-    <div className={styles.container}>
-      <div className={styles.links}>
+    <div className= {""}>
+      <div >
         {links.map((link) => (
           <NavLink item={link} key={link.title} />
         ))}
@@ -41,7 +41,7 @@ const Links = ({session}) => {
           <>
             {session.user?.isAdmin && <NavLink item={{ title: "Admin", path: "/admin" }} />}
             <form action={handleLogout}>
-              <button className={styles.logout}>Logout</button>
+              <button >Logout</button>
             </form>
           </>
         ) : (
@@ -49,7 +49,7 @@ const Links = ({session}) => {
         )}
       </div>
       <Image
-        className={styles.menuButton}
+        
         src="/menu.png"
         alt=""
         width={30}
@@ -57,7 +57,7 @@ const Links = ({session}) => {
         onClick={() => setOpen((prev) => !prev)}
       />
       {open && (
-        <div className={styles.mobileLinks}>
+        <div >
           {links.map((link) => (
             <NavLink item={link} key={link.title} />
           ))}

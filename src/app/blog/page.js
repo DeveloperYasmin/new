@@ -11,14 +11,14 @@ const ContactPage = () => {
   // console.log(a);
 
   return (
-    <div className={styles.container}>
-      <div className={styles.imgContainer}>
-        <Image src="/contact.png" alt="" fill className={styles.img} />
+    <div className= {""}>
+      <div >
+        <Image src="/contact.png" alt="" fill  />
       </div>
-      <div className={styles.formContainer}>
+      <div >
         {/* <HydrationTestNoSSR/> */}
         {/* <div suppressHydrationWarning>{a}</div> */}
-        <form action="" className={styles.form}>
+        <form action="" >
           <input type="text" placeholder="Name and Surname" />
           <input type="text" placeholder="Email Address" />
           <input type="text" placeholder="Phone Number (Optional)" />

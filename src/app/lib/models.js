@@ -1,17 +1,53 @@
-import mongoose from "mongoose"
+import mongoose from "mongoose";
 
-const connection = {};
+const userSchema= new mongoose.Schema({
+    username:{
+        type:String,
+        required:true,
+        unique:true,
+        min:3,
+        max:20
+    },
+    email:{
+        type:String,
+        required:true,
+        unique:true,
+        max:50
+    },
+    password:{
+        type:String,
+    },
+    img:{
+        type:String,
+    },
+    isAdmin:{
+        type:Boolean,
+        default:false,
+    },
+},{timestamps:true})
+const postSchema= new mongoose.Schema({
+    title:{
+        type:String,
+        required:true,
+    },
+    desc:{
+        type:String,
+        required:true,
+    },
+    img:{
+        type:String,
+    },
+    userId:{
+        type:String,
+        required:true,
+    },
+    slug:{
+        type:String,
+        required:true,
+        unique:true,
+    },
 
-export const connectToDb = async () => {
-  try {
-    if(connection.isConnected) {
-      console.log("Using existing connection");
-      return;
-    }
-    const db = await mongoose.connect(process.env.MONGO);
-    connection.isConnected = db.connections[0].readyState;
-  } catch (error) {
-    console.log(error);
-    throw new Error(error);
-  }
-};
+},{timestamps:true})
+
+export const User= mongoose.models?.User || mongoose.model("User",userSchema)
+export const Post= mongoose.models?.Post || mongoose.model("Post",postSchema)

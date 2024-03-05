@@ -1,17 +1,16 @@
-import { getUsers } from "@/lib/data";
-import styles from "./adminUsers.module.css";
+import { getUsers } from "@/app/lib/data";
 import Image from "next/image";
-import { deleteUser } from "@/lib/action";
+import { deleteUser } from "@/app/lib/action";
 
 const AdminUsers = async () => {
   const users = await getUsers();
 
   return (
-    <div className={styles.container}>
+    <div className= {""}>
       <h1>Users</h1>
       {users.map((user) => (
-        <div className={styles.user} key={user.id}>
-          <div className={styles.detail}>
+        <div  key={user.id}>
+          <div >
             <Image
               src={user.img || "/noAvatar.png"}
               alt=""
@@ -22,7 +21,7 @@ const AdminUsers = async () => {
           </div>
           <form action={deleteUser}>
             <input type="hidden" name="id" value={user.id} />
-            <button className={styles.userButton}>Delete</button>
+            <button >Delete</button>
           </form>
         </div>
       ))}

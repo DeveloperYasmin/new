@@ -1,13 +1,13 @@
 "use client";
 
-import { addUser } from "@app/lib/action";
+import { addUser } from "@/app/lib/action";
 import { useFormState } from "react-dom";
 
 const AdminUserForm = () => {
   const [state, formAction] = useFormState(addUser, undefined);
 
   return (
-    <form action={formAction} className={styles.container}>
+    <form action={formAction} className= {""}>
       <h1>Add New User</h1>
       <input type="text" name="username" placeholder="username" />
       <input type="text" name="email" placeholder="email" />

@@ -1,13 +1,13 @@
 "use client"
 
-import { addPost } from "@app/lib/action";
+import { addPost } from "@/app/lib/action";
 import { useFormState } from "react-dom";
 
 const AdminPostForm = ({userId}) => {
   const [state, formAction] = useFormState(addPost, undefined);
   
   return (
-    <form action={formAction} className={styles.container}>
+    <form action={formAction} className= {""}>
       <h1>Add New Post</h1>
       <input type="hidden" name="userId" value={userId} />
       <input type="text" name="title" placeholder="Title" />
