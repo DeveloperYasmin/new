@@ -1,28 +1,28 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/app/navbar";
 import Footer from "./components/footer/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: {
-    default:"Next.js 14 Homepage",
-    template:"%s | Next.js 14"
+    default:"YasminDev Homepage",
+    template:"%s | YasminDev"
   },
-  description: "Next.js starter app description",
+  description: "Home Description",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        {/* <ClientSideProviderTest> */}
-          <div className="container">
-            {children}
-            <Footer />
-          </div>
-        {/* </ClientSideProviderTest> */}
-      </body>
+      <body className={`${inter.className} bg-black text-white m-0 p-0 border-spacing-0`}>
+        <div className="select-none font-serif min-h-dvh m-auto pl-[50px] pr-[50px] flex flex-col justify-between ">
+          <Navbar/>
+        {children}
+        <Footer/>
+        </div>
+        </body>
     </html>
   );
 }

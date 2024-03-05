@@ -18,8 +18,8 @@ const Contactpage = () => {
         <textarea className="p-5 md:w-[500px] w-[300px] m-2 flex border-spacing-2 border-none outline-none bg-stone-900 rounded-md"
         name=""
         id=""
-        cols="30"
-        rows="10"
+        cols="20"
+        rows="5"
         placeholder="Message"
         >
         </textarea>
