@@ -3,8 +3,6 @@ import Link from "next/link"
 import { auth } from "@/app/lib/auth"
 import { useRef, useState } from "react"
 import Image from "next/image"
-// import login from "@/app/(auth)/login/page"
-import LoginForm from "../loginForm/loginForm"
 
 
 const Links = ({session})=> {
