@@ -1,38 +1,40 @@
-import { Suspense } from "react";
-import AdminPosts from "../components/adminPosts/adminPosts";
-import AdminPostForm from "../components/adminPostForm/adminPostForm";
-import AdminUsers from "../components/adminUsers/adminUsers";
-import AdminUserForm from "../components/adminUserForm/adminUsersForm";
-import { auth } from "../lib/auth";
+import { Suspense } from "react"
+import AdminPosts from "../components/adminPosts/adminPosts"
+import AdminPostForm from "../components/adminPostForm/adminPostForm"
+import AdminUsersForm from "../components/adminUserForm/adminUsersForm"
+import AdminUser from "../components/adminUsers/adminUsers"
+import { auth } from "../lib/auth"
 
-const AdminPage = async () => {
-
-  const session = await auth();
-
+const Adminpage = async() => {
+  const session=await auth()
   return (
-    <div className= {""}>
-      <div >
-        <div >
-          <Suspense fallback={<div>Loading...</div>}>
-            <AdminPosts />
-          </Suspense>
-        </div>
-        <div >
-          <AdminPostForm userId = {session?.user?.id} />
-        </div>
+    <div className="mt-12 flex flex-col gap-24">
+      <div className="flex gap-24">
+        <div className="flex-1">
+        <Suspense fallback={<div>Loading..</div>}>
+          <AdminPosts/>
+        </Suspense>
       </div>
-      <div >
-        <div >
-          <Suspense fallback={<div>Loading...</div>}>
-            <AdminUsers />
-          </Suspense>
-        </div>
-        <div >
-          <AdminUserForm />
-        </div>
+    
+      <div className="flex-1">
+          <AdminPostForm userId={session.user.id}/>
+      </div>
+</div>
+<div className="flex gap-24">
+        <div className="flex-1">
+        <Suspense fallback={<div>Loading..</div>}>
+          <AdminUser/>
+        </Suspense>
+      </div>
+    
+      <div className="flex-1">
+          <AdminUsersForm/>
+      </div>
+
+
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default AdminPage;
+export default Adminpage

@@ -8,7 +8,7 @@ const Aboutpage = () => {
     <div className="flex gap-28">
       <div className="flex-1 flex flex-col gap-12">
         <h1 className="text-yellow-500 text-2xl">About Agency </h1>
-        <h1 className="md:text-5xl text-3xl ">We create digital ideas that are bigger,bolder,braver and better</h1>
+        <h1 className="md:text-4xl text-3xl ">We create digital ideas that are bigger,bolder,braver and better</h1>
         <p className="text-xl  font-light text-stone-400">We create digital ideas that are bigger,bolder,braver and better.We believe in good ideas flexibility and precission. Our special team best consulting & finance solution provider.Wide range of web and software development services.</p>
     <div className=" md:flex items-center justify-between">
       <div className="flex flex-col gap-2 ">

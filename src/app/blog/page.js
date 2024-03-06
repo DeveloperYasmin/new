@@ -1,39 +1,31 @@
-// "use client";
-import Image from "next/image";
-export const metadata = {
-  title: "Contact Page",
-  description: "Contact description",
-};
+import Postcard from "@/app/components/postcard/postcard"
+import { getPosts } from "../lib/data"
 
-const ContactPage = () => {
-  // const a = Math.random();
+//FETCH WITH AN API
+const getdata=async ()=>{
+  const res = await fetch("https://yasminagency.vercel.app/api/blog", {next:{revalidate:3600}});
+   
+  if(!res.ok)
+  throw new Error("Something went wrong")
 
-  // console.log(a);
+ return res.json()
+}
+const blogpage = async () => {
+  //FETCH WITH AN API
+ // const posts= await getdata()
 
+ //FETCH WITHOUT AN API
+  const posts= await getPosts()
   return (
-    <div className= {""}>
-      <div >
-        <Image src="/contact.png" alt="" fill  />
-      </div>
-      <div >
-        {/* <HydrationTestNoSSR/> */}
-        {/* <div suppressHydrationWarning>{a}</div> */}
-        <form action="" >
-          <input type="text" placeholder="Name and Surname" />
-          <input type="text" placeholder="Email Address" />
-          <input type="text" placeholder="Phone Number (Optional)" />
-          <textarea
-            name=""
-            id=""
-            cols="30"
-            rows="10"
-            placeholder="Message"
-          ></textarea>
-          <button>Send</button>
-        </form>
-      </div>
+    <div className="flex flex-wrap gap-7">
+      {posts.map((post)=>(<div className="md:w-[40%] lg:max-w-[1280px] md:max-w-[768px] lg:w-[30%] w-full" key={post.id}>
+        <Postcard post={post}/>
+      </div>))}
+      
+      
+    
     </div>
-  );
-};
+  )
+}
 
-export default ContactPage;
+export default blogpage

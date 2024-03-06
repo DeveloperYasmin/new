@@ -23,10 +23,10 @@ const Navbar = ({session})=> {
   return (
     <div>
       
-      <Link href="/"><Image className="font-bold text-3xl" src="/logo.png" width={130} height={160}/></Link>
-    <div className="lg:flex ml-[800px]"> 
+    <div className="lg:flex "> 
       <ul className='lg:flex items-center gap-8 hidden'>
-        <li ><Link className="  hover:bg-yellow-500 hover:text-black  min-w-24 p-2 rounded-full font-medium text-center" href="/">Home</Link></li>
+       <li className="mr-[650px]"> <Link href="/"><Image className="font-bold text-3xl flex " src="/logo.png" width={130} height={160}/></Link> </li>
+        <li ><Link className="  hover:bg-yellow-500  hover:text-black  min-w-24 p-2 rounded-full font-medium text-center" href="/">Home</Link></li>
           <li><Link className="  hover:bg-yellow-500 hover:text-black  min-w-24 p-2 rounded-full font-medium text-center"  href="/about">About</Link></li> 
           <li><Link className="  hover:bg-yellow-500 hover:text-black  min-w-24 p-2 rounded-full font-medium text-center" href="/contact">Contact</Link></li>
           <li><Link className="  hover:bg-yellow-500 hover:text-black  min-w-24 p-2 rounded-full font-medium text-center" href="/blog">Blog</Link></li> 
@@ -41,7 +41,7 @@ const Navbar = ({session})=> {
              </>
 
         ):(
-          <Link className='bg-yellow-600 rounded-md p-3 m-2 text-black font-bold' href="/login">Login</Link>
+          <Link className='bg-yellow-600 h-10 mt-10 ml-10 text-center rounded-md p-3 m-2 text-black font-bold' href="/login">Login</Link>
         )}
          </div>
            <Image ref={Imgref} className='lg:hidden cursor-pointer' src="/menu.png" alt=" " width={30} height={30} onClick={()=>setopen(!open)}></Image>
