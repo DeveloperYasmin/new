@@ -73,3 +73,5 @@ import { handleLogout } from '@/app/lib/action'
     </div>
   )
 }
+
+export default Links
