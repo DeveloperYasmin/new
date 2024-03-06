@@ -39,11 +39,11 @@ const Links = ({session})=> {
                open && (<div ref={Menuref} onClick={()=>setopen(false)} className='absolute z-20 h-[85%] rounded-xl top-24 lg:hidden right-0 w-[50%] flex flex-col items-center justify-center gap-3  bg-stone-900'>
       
       <ul>
-        <li><Link  className="p-3 m-3" href="/">Home</Link></li>
-          <li><Link className="p-3 m-3" href="/about">About</Link></li> 
-          <li><Link  className="p-3 m-3" href="/contact">Contact</Link></li>
-          <li><Link  className="p-3 m-3" href="/admin">Add Post</Link></li> 
-          <li><Link  className="p-3 m-3" href="/blog">View Post</Link></li>
+        <li><Link  className="p-3 mt-5" href="/">Home</Link></li>
+          <li><Link className="p-3 mt-5" href="/about">About</Link></li> 
+          <li><Link  className="p-3 mt-5" href="/contact">Contact</Link></li>
+          <li><Link  className="p-3 mt-5" href="/admin">Add Post</Link></li> 
+          <li><Link  className="p-3 mt-5" href="/blog">View Post</Link></li>
 
       </ul>
                  </div>
