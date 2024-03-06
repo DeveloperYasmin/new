@@ -53,12 +53,12 @@ export const addUser= async(prevState,formData)=>{
     // const desc=formData.get("desc")
     // const slug=formData.get("slug")
 
-    const {username,email,password,img}=Object.fromEntries(formData)
+    const {username,email,password}=Object.fromEntries(formData)
 
     try{
         connectToDb()
         const newUser=new User({
-            username,email,password,img
+            username,email,password
         })
         await newUser.save()
         revalidatePath("/admin")

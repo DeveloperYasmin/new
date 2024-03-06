@@ -32,9 +32,7 @@ const {slug}=params
     // const post= await getPost(slug)
   return (
     <div className="flex gap-24">
-        {post.img &&( <div className="flex-1 relative">
-            <Image src={post.img} alt="" width={400} height={100} className="object-cover"/>
-        </div>)}
+      
         <div className="flex-[2] flex-col gap-12 flex">
             <h1 className="text-6xl text-yellow-600">{post?.title}</h1>
             <div className="flex  gap-4">

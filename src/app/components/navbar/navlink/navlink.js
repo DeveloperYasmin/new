@@ -1,19 +1,15 @@
-"use client"
 import Link from "next/link"
-import { usePathname } from "next/navigation"
-import Links from "../links/Links"
+import Image from "next/image"
+import { auth } from "@/app/lib/auth"
+import Navbar from "./navbar"
 
-const Navlink = ({item}) => {
-
-    const pathName=usePathname()
+const navlink = async() => {
+  const session= await auth()
   return (
-    <div className="min-w-24 p-3  font-medium text-center">
-      <Links/>
-      <h1>Home</h1>
-     <h1>About</h1>
-
-    </div>
+    <div className="h-24 flex items-center justify-between">
+    <Navbar session={session}/></div>
+    
   )
 }
 
-export default Navlink
+export default navlink

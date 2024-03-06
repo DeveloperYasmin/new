@@ -5,10 +5,9 @@ import { useFormState } from "react-dom";
 import Link from "next/link";
 
 const LoginForm = () => {
-  const [state, formAction] = useFormState(login, undefined);
 
   return (
-    <form  action={formAction}>
+    <form  >
       <input type="text" placeholder="username" name="username" />
       <input type="password" placeholder="password" name="password" />
       <button>Login</button>

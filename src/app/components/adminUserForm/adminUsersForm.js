@@ -10,12 +10,7 @@ const AdminUserForm = () => {
         <input className=" p-5 bg-stone-500 text-white border-none rounded-md" type="text" name="username" placeholder="username"/>
         <input className=" p-5 bg-stone-500 text-white border-none rounded-md" type="text" name="email" placeholder="email"/>
         <input className=" p-5 bg-stone-500 text-white border-none rounded-md" type="password" name="password" placeholder="password"/>
-        <input className=" p-5 bg-stone-500 text-white border-none rounded-md" type="text" name="img" placeholder="img"/>
-        <select className=" p-5 bg-stone-500 text-white border-none rounded-md" name="isAdmin">
-        <option value="false">Is Admin?</option>
-            <option value="false">No</option>
-            <option value="true">Yes</option>
-                    </select>
+        
         <button className="p-5 cursor-pointer bg-yellow-500 text-black font-bold border-none rounded-md" >Add</button>
         {state && state.error}
         </form>
