@@ -9,7 +9,6 @@ const AnotherNav = ({session})=> {
   const [open,setopen]=useState(false)
     const Menuref=useRef()
     const Imgref=useRef()
-    console.log(session)
     if(typeof window !== 'undefined')
 {
     window.addEventListener("click",(e)=>{
