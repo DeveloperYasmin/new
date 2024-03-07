@@ -1,6 +1,6 @@
 "use client"
 import { useRef, useState } from 'react'
-import Navlink from '../navlink/navlink'
+import Navlink from './navlink'
 import Image from 'next/image'
 import { handleLogout } from '@/app/lib/action'
 
