@@ -36,7 +36,7 @@ import Link from 'next/link'
   return (
     <div>
     <div className='lg:flex items-center gap-3 hidden'>
-    <Link href="/contact">Contact</Link>
+    <Link href="/login">Contact</Link>
         {links.map((link=>(
             
             <Navlink item={link} key={link.title}/>
