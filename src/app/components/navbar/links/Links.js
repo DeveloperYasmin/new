@@ -1,8 +1,8 @@
 "use client"
 import { useRef, useState } from 'react'
+import Navlink from '../navlink/navlink'
 import Image from 'next/image'
 import { handleLogout } from '@/app/lib/action'
-import Navlink from '../navlink/navlink'
 
 
     const links = [
@@ -29,12 +29,7 @@ import Navlink from '../navlink/navlink'
         const [open,setopen]=useState(false)
     const Menuref=useRef()
     const Imgref=useRef()
-    if(typeof window !== "undefined"){
-    window.addEventListener("click",(e)=>{
-        if(e.target !== Menuref.current && e.target !== Imgref.current){
-            setopen(false) 
-        }
-    })}
+    
     //TEMPORARY
     const isAdmin=true
   return (
@@ -42,10 +37,9 @@ import Navlink from '../navlink/navlink'
     <div className='lg:flex items-center gap-3 hidden'>
         {links.map((link=>(
             <Navlink item={link} key={link.title}/>
-            
         )))}{session?.user?(
             <>      
-            {session?.user?.isAdmin && <Navlink item={{title:"Admin",path:"/admin"}}/> }
+            {session?.user?.isAdmin && <Navlink item={{title:"Admin",path:"/admin"}}/>}
             <form action={handleLogout}>
              <button className='bg-yellow-600 rounded-md p-3 m-2 text-black font-bold'>Logout</button>
              </form>
@@ -75,4 +69,3 @@ import Navlink from '../navlink/navlink'
     </div>
   )
 }
-export default Links

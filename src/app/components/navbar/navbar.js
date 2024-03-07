@@ -1,7 +1,7 @@
 import Link from "next/link"
+import Links from "./links/Links"
 import Image from "next/image"
 import { auth } from "@/app/lib/auth"
-import Links from "./links/Links"
 
 const Navbar = async() => {
   const session= await auth()
