@@ -5,7 +5,7 @@ import { useRef, useState } from "react"
 import Image from "next/image"
 
 
-const Navbar = ({session})=> {
+const AnotherNav = ({session})=> {
   const [open,setopen]=useState(false)
     const Menuref=useRef()
     const Imgref=useRef()
