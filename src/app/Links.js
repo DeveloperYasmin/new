@@ -3,6 +3,7 @@ import { useRef, useState } from 'react'
 import Navlink from './navlink'
 import Image from 'next/image'
 import { handleLogout } from '@/app/lib/action'
+import Link from 'next/link'
 
 
     const links = [
@@ -36,7 +37,7 @@ import { handleLogout } from '@/app/lib/action'
     <div>
     <div className='lg:flex items-center gap-3 hidden'>
         {links.map((link=>(
-              <Navlink item={{title:"About",path:"/contact"}}/> &&
+             <Link href="/contact">Contact</Link> &&
             <Navlink item={link} key={link.title}/>
         )))}{session?.user?(
             <>      
