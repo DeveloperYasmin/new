@@ -33,11 +33,17 @@ import Link from 'next/link'
   return (
     <div>
     <div className='lg:flex items-center gap-3 hidden'>
-    <ul><li><Link href="/contact">Contact</Link></li></ul>
-        {links.map((link=>(
-            
-            <Navlink item={link} key={link.title}/>
-        )))}{session?.user?(
+        
+      <ul className='lg:flex items-center gap-8 hidden'>
+       <li className="mr-[650px]"> <Link href="/"><Image className="font-bold text-3xl flex " src="/logo.png" width={130} height={160}/></Link> </li>
+        <li ><Link className="  hover:bg-yellow-500  hover:text-black  min-w-24 p-2 rounded-full font-medium text-center" href="/">Home</Link></li>
+          <li><Link className="  hover:bg-yellow-500 hover:text-black  min-w-24 p-2 rounded-full font-medium text-center"  href="/about">About</Link></li> 
+          <li><Link className="  hover:bg-yellow-500 hover:text-black  min-w-24 p-2 rounded-full font-medium text-center" href="/contact">Contact</Link></li>
+          <li><Link className="  hover:bg-yellow-500 hover:text-black  min-w-24 p-2 rounded-full font-medium text-center" href="/blog">Blog</Link></li> 
+
+      </ul>
+
+        {session?.user?(
             <>      
             {session?.user?.isAdmin && <Navlink item={{title:"Admin",path:"/admin"}}/>}
             <form action={handleLogout}>
