@@ -16,7 +16,7 @@ const page = () => {
         <Image src="/brands.png" alt="brands" fill/>
       </div>
       </div> 
-      <div className="relative  w-56  h-96 flex-1"><Image src="/hero.gif" alt="hero" fill/>
+      <div className="relative w-56  h-96 flex-1"><Image src="/hero.gif" alt="hero" fill/>
       </div>
       </div>
   )
