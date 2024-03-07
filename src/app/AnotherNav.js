@@ -1,12 +1,23 @@
-
+"use client"
 import Link from "next/link"
 import { auth } from "@/app/lib/auth"
+import { useRef, useState } from "react"
 import Image from "next/image"
 
 
-const AnotherNav = ()=> {
-    //TEMPORARY
- 
+const Navbar = ({session})=> {
+  const [open,setopen]=useState(false)
+    const Menuref=useRef()
+    const Imgref=useRef()
+    console.log(session)
+    if(typeof window !== 'undefined')
+{
+    window.addEventListener("click",(e)=>{
+        if(e.target !== Menuref.current && e.target !== Imgref.current){
+            setopen(false) 
+        }
+    })}
+    const isAdmin=true
 
   return (
     <div>
@@ -17,9 +28,21 @@ const AnotherNav = ()=> {
         <li ><Link className="  hover:bg-yellow-500  hover:text-black  min-w-24 p-2 rounded-full font-medium text-center" href="/">Home</Link></li>
           <li><Link className="  hover:bg-yellow-500 hover:text-black  min-w-24 p-2 rounded-full font-medium text-center"  href="/about">About</Link></li> 
           <li><Link className="  hover:bg-yellow-500 hover:text-black  min-w-24 p-2 rounded-full font-medium text-center" href="/contact">Contact</Link></li>
+          <li><Link className="  hover:bg-yellow-500 hover:text-black  min-w-24 p-2 rounded-full font-medium text-center" href="/blog">Blog</Link></li>
 
       </ul>
-     
+      {session?.user?(
+            <>      
+            {session?.user?.isAdmin &&  <li><Link className="  hover:bg-yellow-500 hover:text-black  min-w-24 p-2 rounded-full font-medium text-center" href="/admin">Admin</Link></li>
+}
+            <form action={handleLogout}>
+             <button className='bg-yellow-600 rounded-md p-3 m-2 text-black font-bold'>Logout</button>
+             </form>
+             </>
+
+        ):(
+        <Navlink item={{title:"Login",path:"/login"}}/>
+        )}
          </div>
            <Image ref={Imgref} className='lg:hidden cursor-pointer' src="/menu.png" alt=" " width={30} height={30} onClick={()=>setopen(!open)}></Image>
            {

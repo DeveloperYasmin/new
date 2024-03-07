@@ -3,7 +3,7 @@ import Image from "next/image"
 import { auth } from "@/app/lib/auth"
 import AnotherNav from "./AnotherNav"
 
-const navlink = async() => {
+const AnotherNavlink = async() => {
   const session= await auth()
   return (
     <div className="h-24 flex items-center justify-between">
@@ -12,4 +12,4 @@ const navlink = async() => {
   )
 }
 
-export default navlink
+export default AnotherNavlink
