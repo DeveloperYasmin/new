@@ -1,21 +1,10 @@
 "use client"
 import Link from "next/link"
 import { auth } from "@/app/lib/auth"
-import { useRef, useState } from "react"
 import Image from "next/image"
 
 
 const AnotherNav = ()=> {
-  const [open,setopen]=useState(false)
-    const Menuref=useRef()
-    const Imgref=useRef()
-    if(typeof window !== 'undefined')
-{
-    window.addEventListener("click",(e)=>{
-        if(e.target !== Menuref.current && e.target !== Imgref.current){
-            setopen(false) 
-        }
-    })}
     //TEMPORARY
  
 
