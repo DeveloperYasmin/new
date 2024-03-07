@@ -15,10 +15,7 @@ import Link from 'next/link'
             title:"About",
             path:"/about"
         },
-        {
-            title:"Contact",
-            path:"/contact"
-        },
+       
         {
             title:"Blog",
             path:"/blog"
@@ -36,7 +33,7 @@ import Link from 'next/link'
   return (
     <div>
     <div className='lg:flex items-center gap-3 hidden'>
-    <Link href="/login">Contact</Link>
+    <ul><li><Link href="/contact">Contact</Link></li></ul>
         {links.map((link=>(
             
             <Navlink item={link} key={link.title}/>
