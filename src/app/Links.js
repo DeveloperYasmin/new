@@ -8,19 +8,9 @@ import Link from 'next/link'
 
     const links = [
         {
-            title:"Home",
-            path:"/"
-        },
-        {
-            title:"About",
-            path:"/about"
-        },
-       
-        {
-            title:"Blog",
-            path:"/blog"
-        },
-        
+            title:"",
+            path:""
+        }
     ]
 
     const Links =({session})=>{
