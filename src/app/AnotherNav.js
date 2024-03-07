@@ -31,18 +31,7 @@ const AnotherNav = ({session})=> {
           <li><Link className="  hover:bg-yellow-500 hover:text-black  min-w-24 p-2 rounded-full font-medium text-center" href="/blog">Blog</Link></li>
 
       </ul>
-      {session?.user?(
-            <>      
-            {session?.user?.isAdmin &&  <li><Link className="  hover:bg-yellow-500 hover:text-black  min-w-24 p-2 rounded-full font-medium text-center" href="/admin">Admin</Link></li>
-}
-            <form action={handleLogout}>
-             <button className='bg-yellow-600 rounded-md p-3 m-2 text-black font-bold'>Logout</button>
-             </form>
-             </>
-
-        ):(
-          <Link className="  hover:bg-yellow-500 hover:text-black  min-w-24 p-2 rounded-full font-medium text-center" href="/login">login</Link>
-        )}
+    
          </div>
            <Image ref={Imgref} className='lg:hidden cursor-pointer' src="/menu.png" alt=" " width={30} height={30} onClick={()=>setopen(!open)}></Image>
            {
