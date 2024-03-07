@@ -5,7 +5,7 @@ import { useRef, useState } from "react"
 import Image from "next/image"
 
 
-const AnotherNav = ({session})=> {
+const AnotherNav = ()=> {
   const [open,setopen]=useState(false)
     const Menuref=useRef()
     const Imgref=useRef()
@@ -17,7 +17,6 @@ const AnotherNav = ({session})=> {
         }
     })}
     //TEMPORARY
-    const isAdmin=true
  
 
   return (
@@ -32,17 +31,7 @@ const AnotherNav = ({session})=> {
           <li><Link className="  hover:bg-yellow-500 hover:text-black  min-w-24 p-2 rounded-full font-medium text-center" href="/blog">Blog</Link></li> 
 
       </ul>
-      {session?.user?(
-            <>      
-            {session?.user?.isAdmin && <Link href="/admin">Admin</Link>}
-            <form action={handleLogout}>
-             <button className='bg-yellow-600 rounded-md p-3 m-2 text-black font-bold'>Logout</button>
-             </form>
-             </>
-
-        ):(
-          <Link className='bg-yellow-600 h-10 mt-10 ml-10 text-center rounded-md p-3 m-2 text-black font-bold' href="/login">Login</Link>
-        )}
+     
          </div>
            <Image ref={Imgref} className='lg:hidden cursor-pointer' src="/menu.png" alt=" " width={30} height={30} onClick={()=>setopen(!open)}></Image>
            {
@@ -56,17 +45,7 @@ const AnotherNav = ({session})=> {
 
       </ul>
          
-               {session?.user?(
-                   <>      
-                   {session?.user?.isAdmin && <Link href="/admin">Admin</Link>}
-                   <form action={handleLogout}>
-                    <button className='bg-yellow-600 rounded-md p-3 m-2 text-black font-bold'>Logout</button>
-                    </form>
-                    </>
-               ):(
-                <Link href="/login">Login</Link>
-                   )}
-           </div>
+                         </div>
            )}
            </div>
   )
