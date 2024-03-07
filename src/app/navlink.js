@@ -7,14 +7,7 @@ const NavLink = ({ item }) => {
   const pathName = usePathname();
 
   return (
-    <Link
-      href={item.path}
-      className={` ${
-        pathName === item.path 
-      }`}
-    >
-      {item.title}
-    </Link>
+   <Link href="/">Home Page</Link>
   );
 };
 
