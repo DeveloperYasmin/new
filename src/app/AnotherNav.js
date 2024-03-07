@@ -1,4 +1,4 @@
-"use client"
+
 import Link from "next/link"
 import { auth } from "@/app/lib/auth"
 import Image from "next/image"
