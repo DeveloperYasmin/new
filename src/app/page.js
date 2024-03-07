@@ -6,7 +6,7 @@ const page = () => {
  
   return (
     <div className="flex gap-5 mt-5">
-   <Loginbar/>
+  
       <div className="flex-1 flex flex-col gap-12 ">
       <h1 className="md:text-6xl text-5xl p-[3px] bg-gradient-to-r from-yellow-600 to-white text-transparent bg-clip-text">Creative Thoughts Agency</h1>
       <p className="md:text-lg text-md">Creativity is seeing what everyone else has seen, and thinking what no one else has thought</p>
